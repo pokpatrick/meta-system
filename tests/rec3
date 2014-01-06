@@ -1,0 +1,4 @@
+[
+	FUNREC inf(n) = IF n > 25 THEN n; ELSE inf(n + 1); FI; 
+	EVAL inf(22);
+];

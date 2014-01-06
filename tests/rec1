@@ -1,0 +1,5 @@
+[
+	DEFINE succ(n) = n + 1;
+	DEFINE choice(q) = IF q < 2 THEN q; ELSE succ(q) + 4; FI;
+	EVAL choice(succ(20));
+];

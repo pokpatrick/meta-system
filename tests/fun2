@@ -1,0 +1,11 @@
+[	
+	DEFINE X 3;
+	DEFINE afe(j) = LET t j IN, X = t, t;
+	
+	EVAL X;
+	EVAL X = 42;
+	EVAL X;
+	
+	EVAL afe(78);
+	EVAL X;
+];

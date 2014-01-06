@@ -1,0 +1,8 @@
+[
+	DEFINE X 3;
+	DEFINE Y 8 + 9;
+	DEFINE succ(n) = n + 1;
+	
+	EVAL X;
+	EVAL succ(42);
+];

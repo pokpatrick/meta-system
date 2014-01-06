@@ -1,0 +1,5 @@
+[
+	FUNREC inf(n) = inf(n + 1); 
+	DEFINE choice(q) = IF q < 2 THEN q; ELSE inf(q); FI;
+	EVAL choice(20);
+];

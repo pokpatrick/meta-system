@@ -1,0 +1,12 @@
+[
+	DEFINE X 7;
+	
+	DEFINE succ(n) =
+		LET total 0 IN,
+		FOR ind = 0 TO X DO
+			total = total + 1
+		DONE,
+		total;
+		
+	EVAL succ(4);
+];

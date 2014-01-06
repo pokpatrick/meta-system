@@ -1,0 +1,24 @@
+[
+	DEFINE X 3;  
+	DEFINE Y 8 + 9;
+	DEFINE succ(n) = n + 1;
+	EVAL succ(42);
+	EVAL succ(Y);
+	DEFINE Z succ;
+	EVAL Z(7);
+	EVAL Z(X);
+	DEFINE sub(m, n) = m - n;
+	EVAL sub(Y, X);
+	DEFINE A sub;
+	EVAL A(2, 0);
+	DEFINE X succ(50);
+	
+	DEFINE x 3;
+	DEFINE x x + 1;
+	EVAL succ(x);
+	
+	EVAL succ(3);
+	EVAL X + Y + 3;
+	EVAL succ(1) - 1;
+	EVAL succ(succ(1) + 1);
+];

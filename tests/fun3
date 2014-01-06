@@ -1,0 +1,8 @@
+[
+	DEFINE X 3;  
+	DEFINE Y 8 + 9;
+	DEFINE succ(n) = LET Z 3 IN, Z + n;
+	DEFINE trois(a, b, c) = 3;
+	EVAL trois(1, 2, 3);
+	EVAL succ(8);
+];

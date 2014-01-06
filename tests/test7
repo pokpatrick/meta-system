@@ -1,0 +1,40 @@
+[
+	DEFINE X 3;
+	
+	CLASS Point { 
+		DEFINE x; 
+		DEFINE y; 
+		
+		METHOD setX(n) { 
+			<SELF>.x = n; 
+		}; 
+		
+		METHOD move(nx, ny) {
+			<SELF>.x = nx,
+			<SELF>.y = ny;
+		};
+		
+		METHOD distance(obj) {
+			<SELF>.x - <obj>.x;
+		};
+		
+		METHOD getObjX(obj) {
+			<obj>.x;
+		};
+		
+		
+	};
+	
+	DEFINE p1 Point.NEW();
+	
+	DEFINE p2 Point.NEW();
+	
+	EVAL p1.setX(10);
+	
+	EVAL p2.move(30, 30);
+	
+	EVAL p2.distance(p1);
+	
+	EVAL p1.getObjX(p2);
+	
+];

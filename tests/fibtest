@@ -1,0 +1,9 @@
+[
+	FUNREC fib(n) = 
+		IF n < 2 THEN 
+			n; 
+		ELSE 
+			fib(n - 1) + fib(n - 2); 
+		FI; 
+	EVAL fib(6);
+];

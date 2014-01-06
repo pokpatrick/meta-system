@@ -1,0 +1,43 @@
+[
+	DEFINE X 7;
+	
+	DEFINE succ(n) = n + 1;
+	
+	CLASS Point { 
+		DEFINE x1; 
+		DEFINE y1; 
+		
+		METHOD setX(n) { 
+			<SELF>.x1 = n;
+		}; 
+		
+		METHOD getX() { 
+			<SELF>.x1;
+		}; 
+		
+		METHOD setY(n) {
+			<SELF>.y1 = n;
+		};
+		
+		METHOD gett(obj) {
+			<obj>.y1;
+		};
+		
+	};
+	
+	DEFINE p Point.NEW();
+	
+	EVAL p.setX(42);
+	
+	DEFINE A ARRAY[X];
+	
+	EVAL SETARRAY(A, 0, succ);
+	EVAL SETARRAY(A, 1, p);
+	EVAL SETARRAY(A, 2, Point);
+	EVAL SETARRAY(A, 3, X);
+	EVAL SETARRAY(A, 4, 5 > 4);
+	EVAL SETARRAY(A, 5, A);
+	
+	EVAL GETARRAY(A, 1).getX();
+	EVAL succ(GETARRAY(A, 3));
+];

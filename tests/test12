@@ -1,0 +1,92 @@
+[	
+	DEFINE SIZE 3;
+
+	CLASS Point { 
+		DEFINE x; 
+		DEFINE y;
+		
+		METHOD setX(n) { 
+			<SELF>.x = n;
+		}; 
+		
+		METHOD getX() { 
+			<SELF>.x;
+		};
+		
+		METHOD getY() { 
+			<SELF>.y;
+		};  
+		
+		METHOD move(nx, ny) {
+			<SELF>.x = nx,
+			<SELF>.y = ny;
+		};
+		
+		METHOD setObjX(obj, n) {
+			<obj>.x = n;
+		};
+		
+	};
+	
+	CLASS Shape { 
+		DEFINE myArray; 
+		
+		METHOD setArray(a) { 
+			<SELF>.myArray = a;
+		};
+		
+		METHOD getArray() {
+			<SELF>.myArray;
+		};
+		
+		METHOD insert(pos, el) {
+			SETARRAY(<SELF>.myArray, pos, el);
+		};
+		
+		METHOD getFromArray(pos) {
+			GETARRAY(<SELF>.myArray, pos);
+		}; 
+		
+		METHOD draw() {
+			FOR ind = 0 TO SIZE - 1 DO
+				GETARRAY(<SELF>.myArray, ind).getX()
+			DONE,
+			88;
+		};
+		
+	};
+	
+	DEFINE p1 Point.NEW();
+	EVAL p1.move(11, 12);
+	EVAL p1.getX();
+	EVAL p1.getY();
+	
+	DEFINE p2 Point.NEW();
+	EVAL p2.move(20, 20);
+	EVAL p2.setObjX(p1, 123);	
+		
+	DEFINE p3 Point.NEW();
+	EVAL p3.move(30, 30);
+	
+	
+	DEFINE s Shape.NEW();
+	EVAL s.getArray();
+	EVAL s.setArray(ARRAY[SIZE]);
+	EVAL s.getArray();
+	
+	EVAL s.getFromArray(0);
+	EVAL s.insert(0, p3);
+	EVAL s.insert(1, p1);
+	EVAL s.insert(2, p2);
+	EVAL s.getFromArray(0);
+	
+	DEFINE tt s.getFromArray(0);
+	EVAL tt.setX(42);
+	EVAL tt.getX();
+	EVAL p1.getX();
+	
+	EVAL SIZE;
+	
+	EVAL s.draw();
+
+];

@@ -1,0 +1,73 @@
+[	
+	CLASS Point { 
+		DEFINE x; 
+		DEFINE y;
+		
+		METHOD setX(n) { 
+			<SELF>.x = n;
+		}; 
+		
+		METHOD getX() { 
+			<SELF>.x;
+		};
+		
+		METHOD getY() { 
+			<SELF>.y;
+		};  
+		
+		METHOD move(nx, ny) {
+			<SELF>.x = nx,
+			<SELF>.y = ny;
+		};
+		
+	};
+	
+	CLASS Shape { 
+		DEFINE myArray; 
+		
+		METHOD setArray(a) { 
+			<SELF>.myArray = a;
+		};
+		
+		METHOD getArray() {
+			<SELF>.myArray;
+		};
+		
+		METHOD insert(pos, el) {
+			SETARRAY(<SELF>.myArray, pos, el);
+		};
+		
+		METHOD getFromArray(pos) {
+			GETARRAY(<SELF>.myArray, pos);
+		}; 
+		
+	};
+	
+	DEFINE p1 Point.NEW();
+	EVAL p1.move(11, 12);
+	EVAL p1.getX();
+	EVAL p1.getY();
+	
+	DEFINE p2 Point.NEW();
+	EVAL p2.move(20, 20);
+	
+	DEFINE p3 Point.NEW();
+	EVAL p3.move(30, 30);
+	
+	
+	DEFINE s Shape.NEW();
+	EVAL s.getArray();
+	EVAL s.setArray(ARRAY[5]);
+	EVAL s.getArray();
+	
+	EVAL s.getFromArray(0);
+	EVAL s.insert(0, p3);
+	EVAL s.insert(1, p1);
+	EVAL s.getFromArray(0);
+	
+	DEFINE tt s.getFromArray(0);
+	EVAL tt.setX(42);
+	EVAL tt.getX();
+	EVAL p1.getX();
+
+];

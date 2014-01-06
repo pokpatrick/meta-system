@@ -1,0 +1,44 @@
+[
+	DEFINE X 3; 
+	
+	CLASS Point { 
+		DEFINE x1; 
+		DEFINE y1; 
+		
+		METHOD setX(n) { 
+			<SELF>.x1 = n;
+		}; 
+		
+		METHOD getX() { 
+			<SELF>.x1;
+		}; 
+		
+		METHOD setY(n) {
+			<SELF>.y1 = n;
+		};
+		
+		METHOD gett(obj) {
+			<obj>.y1;
+		};
+		
+	};
+	
+	DEFINE p Point.NEW();
+	
+	DEFINE p2 Point.NEW();
+	
+	EVAL p.setX(41);
+	
+	EVAL p.getX();
+	
+	EVAL p.setY(20);
+	
+	EVAL p2.setY(30);
+	
+	EVAL p.getX();
+	
+	EVAL p.gett(p);
+	
+	EVAL p.getFields();
+	
+];

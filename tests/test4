@@ -1,0 +1,6 @@
+[
+	CLASS PointVar {
+		DEFINE x1;
+		DEFINE y1;
+	};
+];

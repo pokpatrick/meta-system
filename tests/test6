@@ -1,0 +1,52 @@
+[
+	DEFINE X 3;
+	
+	DEFINE succ(n) = n + 1;
+	
+	DEFINE P succ(20);
+	
+	CLASS Point { 
+		DEFINE x1; 
+		DEFINE y1; 
+		
+		METHOD setX(n) { 
+			<SELF>.x1 = n;
+		}; 
+		
+		METHOD test(v, n) { 
+			LET x1 8 IN,
+			<SELF>.x1 + x1 + X;
+		}; 
+		
+		METHOD getX() {
+			X;
+		};
+		
+		METHOD getX1() {
+			<SELF>.x1;
+		};
+		
+		METHOD getter(obj) {
+			<obj>.x1;
+		};
+	};
+	
+	DEFINE p Point.NEW();
+	
+	DEFINE p2 Point.NEW();
+	
+	EVAL p.setX(23);
+	
+	EVAL p2.setX(66);
+	
+	EVAL p.test(1, 41);
+	
+	EVAL p.getX();
+	
+	EVAL p.getX1();
+	
+	EVAL p.getter(p2);
+	
+	EVAL succ(X);
+
+];
